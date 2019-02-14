@@ -12,3 +12,6 @@
 *.ova
 *.vmdk
 
+# Hidden Vagrant-directory
+.vagrant
+
