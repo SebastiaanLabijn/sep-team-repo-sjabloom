@@ -1,5 +1,7 @@
 # Opdracht 1: Proefopstellingen netwerkapparatuur
 
+Deadline: Week 3
+
 ## Opdrachtomschrijving
 
 Als ict-dienstverlener is het nuttig om in bepaalde aspecten van ons aanbod te standaardiseren op één bepaald merk. Dat laat de medewerkers toe zich verregaand te specialiseren in de werking van die apparatuur en zo de klanten een betere dienstverlening te kunnen aanbieden. Voor netwerkapparatuur is de keuze in de context van dit project voor de hand liggend: Cisco.
@@ -11,7 +13,6 @@ Het is belangrijk om de apparatuur beter te leren kennen, zodat we die later doe
 - `opdracht-01-lab2.pdf`: eenvoudig netwerk met 2 switches
 - `opdracht-01-lab3.pdf`: eenvoudig netwerk met router en switch
 - `opdracht-01-lab4.pdf`: complexer netwerk met statische routering
-
 
 ## Acceptatiecriteria
 

@@ -1,5 +1,7 @@
 # Opdracht 2: Automatiseren opzetten servers
 
+Deadline: Week 7
+
 ## Opdrachtomschrijving: Webapplicatieservers
 
 Verschillende klanten vragen ons om hun **webapplicatie** te hosten. Tot nu toe hebben we altijd manueel een server opgezet waarbij de nodige software geïnstalleerd en geconfigureerd werd. Door de groeiende vraag is dit niet houdbaar. De bedoeling is een soort "sjabloon" uit te werken zodat we veel sneller een nieuwe server kunnen opzetten die meteen geconfigureerd is om een applicatie op te draaien. Om het voor een webapplicatie-ontwikkelaar eenvoudiger te maken om op haar/zijn eigen laptop een **testomgeving** op te zetten, is de eerste stap het creëren van VirtualBox VMs.
