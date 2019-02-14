@@ -1,7 +1,7 @@
 # Voortgangsrapport week nn
 
 * Groep:
-* Datum:
+* Datum voortgangsgesprek:
 
 | Student  | Aanw. | Opmerking |
 | :---     | :---  | :---      |
