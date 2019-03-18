@@ -30,6 +30,11 @@
 # [1] http://docs.vagrantup.com/v2/synced-folders/basic_usage.html
 ---
 
-- name: srv001
+# The LAMP server
+- name: srv001 
   ip: 192.168.56.31
+
+# The WISA server
+- name: srv002
+  ip: 192.168.56.32
 

@@ -81,9 +81,9 @@ You can add hosts to the environment by adding entries to the `vagrant-hosts.yml
 ```Yaml
 - name: srv001
   ip: 192.168.56.31
+  box: bertvv/fedora25
 - name: srv002
   ip: 192.168.56.32
-  box: bertvv/fedora25
 - name: srv003
   ip: 192.168.56.33
   synced_folders:
@@ -100,12 +100,12 @@ You can add hosts to the environment by adding entries to the `vagrant-hosts.yml
 
 ### Provisioning
 
-For each host you defined, you should add a shell script to the `provisioning/` directory with the same name as the VM, e.g. [srv001.sh](provisioning/srv001.sh). The directory now also contains two other scripts:
+For each host you defined, you should add a shell script to the `provisioning/` directory with the same name as the VM, e.g. [srv001.sh](provisioning/srv001.sh) or [srv002.ps1](provisioning/srv002.ps1). The directory now also contains two other scripts:
 
 - [util.sh](provisioning/util.sh), which contains Bash functions that you can use in your provisioning scripts
 - [common.sh](provisioning/common.sh), which contains provisioning tasks that are common to all VMs in your Vagrant environment.
 
-Host-specific provisioning scripts should source both files.
+Host-specific provisioning scripts for Linux should source both files.
 
 ## Contributors
 
