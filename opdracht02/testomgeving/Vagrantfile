@@ -14,7 +14,7 @@ require 'yaml'
 ENV["LC_ALL"] = "en_US.UTF-8"
 
 # Set your default base box here
-DEFAULT_BASE_BOX = 'bento/centos-7.5'
+DEFAULT_BASE_BOX = 'bento/centos-8'
 
 #
 # No changes needed below this point
@@ -102,7 +102,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         # host name, this will fail.
         vb.customize ['modifyvm', :id, '--groups', PROJECT_NAME]
       end
-
+            
       # Run configuration script for the VM
       node.vm.provision 'shell', path: 'provisioning/' + host['name'] + '.sh'
     end

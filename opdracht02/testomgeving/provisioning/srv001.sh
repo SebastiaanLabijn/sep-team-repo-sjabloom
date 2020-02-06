@@ -6,12 +6,9 @@
 # Bash settings
 #------------------------------------------------------------------------------
 
-# abort on nonzero exitstatus
-set -o errexit
-# abort on unbound variable
-set -o nounset
-# don't mask errors in piped commands
-set -o pipefail
+set -o errexit   # abort on nonzero exitstatus
+set -o nounset   # abort on unbound variable
+set -o pipefail  # don't mask errors in piped commands
 
 #------------------------------------------------------------------------------
 # Variables
@@ -35,7 +32,13 @@ source ${PROVISIONING_SCRIPTS}/common.sh
 # Provision server
 #------------------------------------------------------------------------------
 
-info "Starting server specific provisioning tasks on ${HOSTNAME}"
+log "Starting server specific provisioning tasks on ${HOSTNAME}"
 
 # TODO: insert code here, e.g. install Apache, add users (see the provided
 # functions in utils.sh), etc.
+
+log "Create user"
+
+ensure_user_exists bert
+assign_groups bert wheel
+
