@@ -1,47 +1,32 @@
-# Opdracht 5: Backup server
+# Opdracht 5: demonstratie van een Cybersecurity Attack
 
-Op vraag van VZW Taijitan Yoshin Ryu (http://jiu-jitsu-gent.be/) zullen studenten van HOGENT een webapplicatie ontwikkelen voor het bijhouden van de ledenadministratie en voor het beschikbaar maken van multimediaal lesmateriaal (beschrijvingen van oefeningen, afbeeldingen, video, enz.). De applicatie zelf zal worden geschreven door de studenten van het keuzevak programmeren en gehost op een webserver. De klant wil ook een backup-server, en aangezien dit eerder systeembeheertaak is, wordt dit jullie opdracht.
+## Opdrachtomschrijving: Cybersecurity Attack
 
-Deze server blijft in beheer van de klant en staat bij hem thuis. Dit is dus geen VPS of server in de cloud, maar eerder een NAS. De uiteindelijke vorm en functionaliteit van deze server ligt nog niet 100% vast. De klant heeft enkele ideeën van de gewenste functionaliteit, maar hoe dit in de praktijk zal/kan uitgewerkt worden is nog niet duidelijk. Jullie taak is om enkele proof-of-concepts op te zetten die aantonen dat het idee realiseerbaar is.
+Als jong team beslissen jullie om jullie ook te richten op de (groeiende) markt van **Cybersecurity**. De diensten die je wil gaan aanbienden zijn een Security Audit d.m.v. [Penetration Testing](https://en.wikipedia.org/wiki/Penetration_test). Gezien het onmogelijk is om zonder inkomsten of contract al deze activiteiten al te gaan ontplooien, beslissen jullie om slechts één demo aan de klant te laten zien om hen te overtuigen van jullie expertise - in de hoop zo een contract te kunnen binnenrijven.
 
-## Basisfunctionaliteit: synchronisatie ledendatabank en lesmateriaal
+Je werkt een demo uit die een bestaande, gekende aanval volledig nabootst. Je zoekt een demo die je relevant vindt, en die je ook haalbaar acht naar de kunde van je eigen team. Indruk maken mag./zit
 
-* De beheerder wil op regelmatige tijdstippen een synchronisatie kunnen uitvoeren tussen de webapplicatie en de backup-server:
-    * Backup van de ledendatabank van de webaplicatieserver naar de backup-server.
-    * Op de backup-server worden in principe nooit wijzigingen aangebracht in de ledendatabank, dat gebeurt enkel in de applicatie. Synchroniseren gebeurt dus in één richting.
-    * De beheerder bereidt regelmatig nieuw lesmateriaal voor en slaat dit op op de backup-server. Als dit klaar is voor publicatie, dan moet dit gesynchroniseerd worden met de webapplicatieserver. Op de webapplicatieserver zullen geen wijzigingen gemaakt worden, dus ook hier gebeurt de synchronisatie in één richting.
-* Bepalen *hoe* de synchronisatie precies zal verlopen moet gebeuren in onderling overleg met de begeleiders en de programmeurs.
-    * Welke database wordt gebruikt in de applicatie? MySQL/MariaDB, SQLite, ...? Kan je die ook installeren op de backup-server? Hoe kan je data synchroniseren tussen de applicatieserver en de backup-server?
-    * Op welke manier wordt het lesmateriaal beschikbaar gemaakt voor de leden en hoe ga je controleren welke bestanden gewijzigd zijn en naar de applicatieserver gekopieerd moeten worden? Kijk bv. naar rsync, sftp, ...
-    * Behalve het opstarten van het synchronisatieproces is er van de gebruiker geen enkele interactie nodig en gebeurt alles automatisch via een script. Als er iets misloopt met het proces, dan moet het voor de gebruiker mogelijk zijn om de oorzaak te achterhalen en dit op te lossen.
-* Gebruik de LAMP-server uit opdracht 2 om de webapplicatieserver te simuleren.
-    * Pas waar nodig de installatie-scripts aan aan deze opdracht
-    * Indien mogelijk kan je ook contact opnemen met een team programmeurs om een demo-versie van hun applicatie te bekomen en die op jullie server te installeren. Probeer in elk geval de configuratie van de webapplicatieserver af te stemmen op hoe die er in de praktijk zal uitzien.
+Praktisch zet je dit volledig op in een virtuele omgeving, waar e.g. één VM de attacker is, en één VM de computer die je probeert binnen te dringen. Extra toestellen (routers, servers, ...) kunnen in je omgeving geplaatst worden al naar gelang je dit nodig hebt om je demo te kunnen geven. Je voorziet de nodige documentatie zodat je enerzijds de demo gemakkelijk kan geven, anderzijds de klant conceptueel begrijpt wat de demo precies doet (zonder alle praktische commando's).
 
-## Uitbreiding: toegang tot lesmateriaal over het Internet
+Mogelijke bronnen:
 
-* De beheerder wil leden van thuis uit toegang geven tot het lesmateriaal op de backup-server. Zij melden zich aan met hun gebruikersnaam en wachtwoord, zoals die in de ledendatabank is geregistreerd, en kunnen het lesmateriaal specifiek voor hun niveau (= kleur gordel) bekijken, maar niet het lesmateriaal voor hogere niveaus. Videos worden niet gedownload, maar getoond via streaming. Probeer een schatting te maken van de maandelijkse netwerktrafiek die dit systeem zou gebruiken, zodat de klant een kostenraming kan maken.
-* Hoe ga je de bestanden op een gebruiksvriendelijke manier toegankelijk maken voor de gebruikers? Een voor de hand liggende keuze is via een webserver (bv Apache). Hoe ga je authenticatie implementeren?
-    * Kan je authenticatie rechtstreeks koppelen aan de ledendatabank? Hoe zal authenticatie in de webapplicatie gebeuren en hoe worden wachtwoorden opgeslagen?
-    * Bestudeer de werking van `.htaccess`. Is het eventueel mogelijk om `.htaccess`-bestanden te genereren vanuit de ledendatabank?
-* Voor deze functionaliteit zijn geen extra manuele handelingen nodig om dit te onderhouden. Alle nodige configuratiewijzigingen (bv. nieuwe leden, gewijzigde wachtwoorden, wijzigingen in toegangsrechten, ...) worden via het synchronisatiescript uitgevoerd.
-
-## Niet-functionele requirements
-
-* Gebruik in eerste instantie een VirtualBox VM met Linux om het proof-of-concept op te zetten. Automatiseer de installatie en configuratie met Vagrant en scripts.
-* De klant heeft een NAS die hij wil gebruiken om de servercomponent van de applicatie op de draaien, meer bepaald een Iomega StorCenter ix2.
-    * Is de functionaliteit van dat toestel voldoende om de gevraagde functionaliteit op te implementeren? Op NAS-systemen draait typisch Linux en sommige modellen laten toe om er applicaties (databank, webserver, enz) op te installeren of in te loggen op de Bash shell.
-* De klant staat ook open voor andere hardware als de NAS onvoldoende functionaliteit heeft om jullie oplossing te realiseren. Ga in dat geval op zoek naar een geschikt apparaat en maak een prijsschatting. Dat kan een NAS zijn met meer functionaliteit (kijk in de eerste plaats naar Synology of QNAP), een mini-pc met Linux, enz. Requirements:
-    * De nodige serversoftware (bv. database, webserver, fileserver, ...) en scripts moet kunnen geïnstalleerd worden op dit apparaat
-    * Er moet voldoende schijfcapaciteit voorzien worden voor het huidige materiaal en het materiaal dat in de toekomst nog zal ontwikkeld worden
-* Alle nodige nodige scripts en duidelijke documentatie voor het installeren en configureren van de server wordt opgeleverd aan de klant. Die moet in staat zijn om aan de hand daarvan de backup-server opnieuw "from scratch" op te zetten.
+- [Hacking exposed 7: network security secrets & solutions](https://www.unicat.be/uniCat?query=sysid:30316845)
+- [Black Hat Python: Python Programming for Hackers and Pentesters](https://www.unicat.be/uniCat?query=sysid:53596815)
+- [The Kali Linux project](https://www.kali.org/penetration-testing-with-kali-linux/)
+- [VulnHub](https://www.vulnhub.com/): "materials that allows anyone to gain practical 'hands-on' experience in digital security, computer software & network administration."
+- [Hack The Box](https://www.hackthebox.eu/): pen-testing labs
+- [IppSec](https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA) Youtube-kanaal met walkthroughs van Hack The Box-uitdagingen
+- [The Cyber Mentor](https://www.youtube.com/channel/UC0ArlFuFYMpEewyRBzdLHiw): Youtube-kanaal van een Ethical Hacker/Penetration tester
+- [Damn Vulnerable Web Application](http://www.dvwa.co.uk/): PHP/MySQL-applicatie met beveiligingsproblemen
+- [Portswigger Web Security Academy](https://portswigger.net/web-security): Gratis online web security training van de auteurs van de [Burp suite](https://portswigger.net/burp)
+- Je eigen Internet research (hoewel je hier vaak door de bomen het bos niet ziet)
 
 ## Acceptatiecriteria
 
-- Er is een proof-of-concept opgezet die de werking van de backup-server demonstreert, die bestaat uit:
-    - Een VM voor de backup-server
-    - Een VM voor een mock-up van de applicatieserver
-- Bij oplevering moeten jullie aan de hand van een demo minstens kunnen aantonen dat de basisfunctionaliteit (zoals hierboven beschreven) werkt. Met andere woorden, maak een wijziging in het lesmateriaal en in het ledenbestand, en voer de synchronisatie uit. Optioneel tonen jullie ook de werking van de voorgestelde uitbreiding aan.
-- Tenslotte doen jullie ook een aanbeveling voor hoe de functionaliteit op de NAS van de klant kan geïnstalleerd worden, of -als dat om de ene of de andere reden niet mogelijk is- welke hardware eventueel kan aangekocht worden als alternatief (specificaties + kostenraming).
-- Voorzie de nodige technische en gebruikersdocumentatie
-
+- Je toont een werkende demo van een (gekende) Cybersecurity aanval
+    - Je legt enerzijds het principe achter de mogelijke aanval uit. Welke zwakheid in een systeem wordt uitgebuit?
+    - Anderzijds toon je dat je de nodige tools gevonden hebt, en kan laten werken om de aanval effectief uit te voeren.
+- De (virtuele) omgeving waarin je alles voorbereid hebt, is online beschikbaar in een VirtualBox OVA bestand (niet binnen de Github-repository!).
+- Voorzie de nodige documentatie
+    - technische documentatie die alle teamleden en de begeleiders in staat stelt om de omgeving op te zetten zonder hulp te moeten vragen
+    - *white paper* die op een bevattelijke manier uitlegt hoe de aanval in zijn werk gaat, en hoe een bedrijf zich daartegen kan beschermen
