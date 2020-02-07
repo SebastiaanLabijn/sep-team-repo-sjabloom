@@ -16,7 +16,7 @@ Het is belangrijk om de apparatuur beter te leren kennen, zodat we die later doe
 
 1. Maak de Packettracer-opdracht en zorg dat je alles correct hebt. Dus evaluatie = 100%.
 2. Realiseer de labo-opstellingen in bijlage in PacketTracer, demonstreer de werking aan je begeleider en schrijf er een gedetailleerd verslag over.
-3. Labo 4 wordt ook uitgevoerd op fysieke routers en switches en gedemonstreerd aan je begeleider.
+3. Labo 3 en 4 worden ook uitgewerkt op fysieke routers en switches en gedemonstreerd aan je begeleider.
 4. Regelmatig gebeurt het dat op routers of switches nog instellingen achtergebleven zijn van een vorig gebruik. In het slechtste geval is er een admin-wachtwoord ingesteld en kan je niets meer wijzigen. Daarom is het aangewezen om een checklist/procedure op te stellen met de stappen die nodig zijn om het apparaat te resetten naar de fabrieksinstellingen. Doe dit zowel voor een router als een switch.
 5. Hou een lijstje (cheat sheet) bij van de belangrijkste basiscommando’s voor IOS. Dit komt later zeker van pas!
 
@@ -25,12 +25,11 @@ Het is belangrijk om de apparatuur beter te leren kennen, zodat we die later doe
 **Demo** tijdens de contactmomenten van:
 
 - de opstellingen van de 4 labo's in Packettracer
-- de opstelling van labo 4 met fysieke hardware
+- de opstellingen van labo's 3 en 4 met fysieke hardware
 
 Op Github:
 
 - **PacketTracer-bestanden** met een simulatie van de gegeven opstellingen
 - Gedetailleerd **verslag** van realisatie van de proefopstellingen
 - **Cheat sheet** met basiscommando’s IOS
-- Checklist: hoe **reset** je eventuele achtergebleven instellingen op een Cisco
-router/switch?
+- Checklist: hoe **reset** je eventuele achtergebleven instellingen op een Cisco router/switch?
