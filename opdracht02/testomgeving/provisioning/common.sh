@@ -1,4 +1,4 @@
-#! /usr/bin/bash
+#! /bin/bash
 #
 # Provisioning script common for all servers
 
