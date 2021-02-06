@@ -32,4 +32,5 @@
 
 - name: srv001
   ip: 192.168.56.31
+  box: bento/centos-7.9
 
