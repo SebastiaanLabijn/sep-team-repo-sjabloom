@@ -1,50 +1,32 @@
-# Opdracht 4: Microsoft Deployment Toolkit
+# Opdracht 5: demonstratie van een Cybersecurity Attack
 
-## Opdrachtomschrijving
+## Opdrachtomschrijving: Cybersecurity Attack
 
-Voor een kantoornetwerk (Windows omgeving) wens je de uitrol van software op de werkstations (clients) te automatiseren. Je wenst ook om de webserver van het bedrijf te automatiseren. Binnen een Windows omgeving kan je dit met "Microsoft Deployment Toolkit (MDT)" op een efficiënte manier uitvoeren. Daar waar nodig kan je gebruik maken van PowerShell, dit zal vooral van toepassing zijn voor de server opdrachten binnen het MDT gedeelte.
+Als jong team beslissen jullie om jullie ook te richten op de (groeiende) markt van **Cybersecurity**. De diensten die je wil gaan aanbienden zijn een Security Audit d.m.v. [Penetration Testing](https://en.wikipedia.org/wiki/Penetration_test). Gezien het onmogelijk is om zonder inkomsten of contract al deze activiteiten al te gaan ontplooien, beslissen jullie om slechts één demo aan de klant te laten zien om hen te overtuigen van jullie expertise - in de hoop zo een contract te kunnen binnenrijven.
 
-Gebruik MDT, terug te vinden op [https://www.microsoft.com/en-us/download/details.aspx?id=54259](https://www.microsoft.com/en-us/download/details.aspx?id=54259) om volgende software pakketen automatisch op de clients te installeren:
-- Windows 10
-- Adobe Reader
-- Java
-- Libre Office
-- Alle Windows updates
+Je werkt een demo uit die een bestaande, gekende aanval volledig nabootst. Je zoekt een demo die je relevant vindt, en die je ook haalbaar acht naar de kunde van je eigen team. Indruk maken mag./zit
 
-Zorg dat uw Windwos Server 2016 automatisch geïnstalleerd wordt aan de hand van bovenstaande toolkit.
-Je installeerd volgende componenten op deze server
-- Windows 2016
-- ASP.NET
-- IIS
-- Microsoft SQL Server.
-- Zorg dat uw server voorzien is van de laatste updates alvorens te deployen.
+Praktisch zet je dit volledig op in een virtuele omgeving, waar e.g. één VM de attacker is, en één VM de computer die je probeert binnen te dringen. Extra toestellen (routers, servers, ...) kunnen in je omgeving geplaatst worden al naar gelang je dit nodig hebt om je demo te kunnen geven. Je voorziet de nodige documentatie zodat je enerzijds de demo gemakkelijk kan geven, anderzijds de klant conceptueel begrijpt wat de demo precies doet (zonder alle praktische commando's).
 
-## Test-omgeving
+Mogelijke bronnen:
 
-Gebruik Virtualbox om deze instalaties te doen. Maak geen gebruik van Vagrant. Dit gaat u redelijk veel problemen geven om dit op te zetten. 
-
-## Productie-omgeving
-
-De bedoeling is om servers met exact dezelfde configuratie in een productie-omgeving te kunnen opzetten. We denken er aan om dit uit te besteden via een Infrastructure as a Service/public cloud provider .
-
-De volgende Public Cloud providers geven gratis credits via het Github Student Pack:
-
-    Digital Ocean
-    Amazon Web Services Educate
-    Azure
-
-Kies een van deze platformen en reproduceer de testopstelling uit VirtualBox in de cloud. Maak voor monitoring eventueel gebruik van de functionaliteiten van de cloud-omgeving. Als jullie scripts voldoende configureerbaar zijn, is er slechts een minimum aan wijzigingen nodig.
+- [Hacking exposed 7: network security secrets & solutions](https://www.unicat.be/uniCat?query=sysid:30316845)
+- [Black Hat Python: Python Programming for Hackers and Pentesters](https://www.unicat.be/uniCat?query=sysid:53596815)
+- [The Kali Linux project](https://www.kali.org/penetration-testing-with-kali-linux/)
+- [VulnHub](https://www.vulnhub.com/): "materials that allows anyone to gain practical 'hands-on' experience in digital security, computer software & network administration."
+- [Hack The Box](https://www.hackthebox.eu/): pen-testing labs
+- [IppSec](https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA) Youtube-kanaal met walkthroughs van Hack The Box-uitdagingen
+- [The Cyber Mentor](https://www.youtube.com/channel/UC0ArlFuFYMpEewyRBzdLHiw): Youtube-kanaal van een Ethical Hacker/Penetration tester
+- [Damn Vulnerable Web Application](http://www.dvwa.co.uk/): PHP/MySQL-applicatie met beveiligingsproblemen
+- [Portswigger Web Security Academy](https://portswigger.net/web-security): Gratis online web security training van de auteurs van de [Burp suite](https://portswigger.net/burp)
+- Je eigen Internet research (hoewel je hier vaak door de bomen het bos niet ziet)
 
 ## Acceptatiecriteria
 
-- Er is een proof-of-concept van de automatische uitrol van software binnen een Windows client - serveromgeving.
-- De nodige documentatie (lijst software, technische handleidingen, testplannen, testrapporten, ...) zijn aanwezig.
-
-## Deliverables
-
-- Demo tijdens de contactmomenten van de proof-of-concept.
-- Op Github:
-    - Lastenboek
-    - Alle achtergrondinformatie die jullie verzameld hebben om met de opdracht aan de slag te kunnen gaan
-    - Gedetailleerde technische handleidingen gericht naar andere teamleden over installatieprocedures en de gebruikte scripts
-    - Testplannen en testrapporten
+- Je toont een werkende demo van een (gekende) Cybersecurity aanval
+    - Je legt enerzijds het principe achter de mogelijke aanval uit. Welke zwakheid in een systeem wordt uitgebuit?
+    - Anderzijds toon je dat je de nodige tools gevonden hebt, en kan laten werken om de aanval effectief uit te voeren.
+- De (virtuele) omgeving waarin je alles voorbereid hebt, is online beschikbaar in een VirtualBox OVA bestand (niet binnen de Github-repository!).
+- Voorzie de nodige documentatie
+    - technische documentatie die alle teamleden en de begeleiders in staat stelt om de omgeving op te zetten zonder hulp te moeten vragen
+    - *white paper* die op een bevattelijke manier uitlegt hoe de aanval in zijn werk gaat, en hoe een bedrijf zich daartegen kan beschermen
