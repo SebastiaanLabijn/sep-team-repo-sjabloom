@@ -27,6 +27,7 @@
 | student2   |         |              |
 | student3   |         |              |
 | student4   |         |              |
+| student5   |         |              |
 | **totaal** |         |              |
 
 (na oplevering van de taak een schermafbeelding toevoegen van rapport tijdbesteding voor deze taak)
