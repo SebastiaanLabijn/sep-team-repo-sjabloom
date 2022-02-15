@@ -9,6 +9,7 @@
 | student2 |       |           |
 | student3 |       |           |
 | student4 |       |           |
+| student5 |       |           |
 
 ## Wat heb je deze week gerealiseerd?
 
@@ -52,6 +53,7 @@
 ### Student 2
 ### Student 3
 ### Student 4
+### Student 5
 
 ## Waar hebben jullie nog problemen mee?
 
@@ -66,6 +68,7 @@
 ### Student 2
 ### Student 3
 ### Student 4
+### Student 5
 
 ## Feedback analyseluik
 
@@ -75,4 +78,5 @@
 ### Student 2
 ### Student 3
 ### Student 4
+### Student 5
 
