@@ -13,6 +13,7 @@
 Wacht niet tot het laatste moment voor het aanmaken van je weekrapport, maar doe dit meteen voor de komende periode. Bijvoorbeeld, in week 2 maak je alvast het rapport aan voor week 3, enz. Zo kunnen teamleden dit aanvullen telkens ze iets voor het project doen en heeft het team bij het volgende voortgangsgesprek nog een minimum aan werk om het rapport af te werken. Kopieer het sjabloon naar een document met naam `week02.md`, `week03.md`, enz. De begeleider vult bij het begin van het gesprek de aanwezigheden in en eventuele opmerkingen. Ook de sectie *Feedback* onderaan is voor de begeleiders gereserveerd.
 
 Elk teamlid zorgt afzonderlijk nog voor een individueel **tijdregistratierapport** met een overzicht van de geleverde prestaties, bv. aan de hand van een screenshot.
+Daarnaast wordt er ook een globaal overzichtvan het volledige team voor de week opgenomen.
 
 Een voorbeeldje van de nodige Markdown code:
 
